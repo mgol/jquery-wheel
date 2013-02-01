@@ -10,8 +10,10 @@ To provide consistency with the rest of jQuery mouse events, this plugin defines
 * **deltaX**, **deltaY**, **deltaZ** - amount to scroll along each axis (deltaZ is not supported in WebKit & Opera, deltaX is not supported in Opera)
 
 Example usage:
+
 	$(element).wheel(function (evt) {
 		if (evt.deltaY > 0) { /* zooming out handling */ }
 		else { /* zooming in handling */ }
 	});
+
 
