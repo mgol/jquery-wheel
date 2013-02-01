@@ -9,17 +9,11 @@
 (function ($) {
     'use strict';
 
-    var nativeEvent;
-    try {
-        // Modern browsers support 'wheel' => polyfill not needed.
-        if (new WheelEvent('wheel')) {
-            nativeEvent = 'wheel';
-        }
-    } catch (e) {
-        nativeEvent = 'mousewheel';
-    }
+    // Modern browsers support 'wheel', other - 'mousewheel'.
+    var dummy = document.createElement('div'),
+        nativeEvent = 'onwheel' in dummy ? 'wheel' : 'mousewheel';
 
-    // Normalizing event properties for the 'wheel' event (like ev.which etc.).
+    // Normalizing event properties for the 'wheel' event (like event.which etc.).
     if (nativeEvent === 'wheel') {
         $.event.fixHooks.wheel = $.event.mouseHooks;
     } else {
@@ -32,28 +26,28 @@
         // Handler for the 'mousewheel' event (Chrome, Opera, Safari).
 
         var multiplier = -1 / 120,
-            ev = $.event.fix(orgEvent);
+            event = $.event.fix(orgEvent);
 
         if (nativeEvent === 'wheel') {
-            ev.deltaMode = orgEvent.deltaMode;
-            ev.deltaX = orgEvent.deltaX;
-            ev.deltaY = orgEvent.deltaY;
-            ev.deltaZ = orgEvent.deltaZ;
+            event.deltaMode = orgEvent.deltaMode;
+            event.deltaX = orgEvent.deltaX;
+            event.deltaY = orgEvent.deltaY;
+            event.deltaZ = orgEvent.deltaZ;
         } else {
-            ev.type = 'wheel';
-            ev.deltaMode = 1; // delta === 1 => scrolled one line
-            ev.deltaX = ev.deltaZ = 0; // defaults
+            event.type = 'wheel';
+            event.deltaMode = 1; // delta === 1 => scrolled one line
+            event.deltaX = event.deltaZ = 0; // defaults
 
-            ev.deltaY = multiplier * orgEvent.wheelDelta;
+            event.deltaY = multiplier * orgEvent.wheelDelta;
             // Webkit supports wheelDeltaX as well.
             if (orgEvent.wheelDeltaX != null) {
-                ev.deltaX = multiplier * orgEvent.wheelDeltaX;
+                event.deltaX = multiplier * orgEvent.wheelDeltaX;
             }
         }
 
         // Exchange original event for the modified one in arguments list.
         var args = [].slice.call(arguments, 0);
-        args[0] = ev;
+        args[0] = event;
 
         /*jshint validthis:true */ // event handler
         return $.event.dispatch.apply(this, args);
