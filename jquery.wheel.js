@@ -8,7 +8,7 @@
 (function ($) {
     'use strict';
 
-    // Modern browsers support 'wheel', other - 'mousewheel'.
+    // Modern browsers support 'wheel', others - 'mousewheel'.
     var nativeEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
 
     // Normalizing event properties for the 'wheel' event (like event.which etc.).
@@ -21,7 +21,7 @@
     }
 
     function handler(orgEvent) {
-        /* jshint validthis:true */ // event handler
+        /* jshint validthis: true */ // event handler
         // Handler for the 'mousewheel' event (Chrome, Opera, Safari).
 
         var multiplier = -1 / 120,
