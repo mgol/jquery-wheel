@@ -21,11 +21,10 @@
     }
 
     function handler(orgEvent) {
-        /* jshint validthis: true */ // event handler
         // Handler for the 'mousewheel' event (Chrome, Opera, Safari).
+        /* jshint validthis: true */ // event handler
 
-        var multiplier = -1 / 120,
-            event = $.event.fix(orgEvent);
+        var event = $.event.fix(orgEvent);
 
         if (nativeEvent === 'wheel') {
             event.deltaMode = orgEvent.deltaMode;
@@ -34,14 +33,10 @@
             event.deltaZ = orgEvent.deltaZ;
         } else {
             event.type = 'wheel';
-            event.deltaMode = 1; // delta === 1 => scrolled one line
-            event.deltaX = event.deltaZ = 0; // defaults
-
-            event.deltaY = multiplier * orgEvent.wheelDelta;
-            // Webkit supports wheelDeltaX as well.
-            if (orgEvent.wheelDeltaX != null) {
-                event.deltaX = multiplier * orgEvent.wheelDeltaX;
-            }
+            event.deltaMode = 0; // deltaMode === 0 => scrolling in pixels (in Chrome default wheelDeltaY is 120)
+            event.deltaX = -1 * orgEvent.wheelDeltaX;
+            event.deltaY = -1 * orgEvent.wheelDeltaY;
+            event.deltaZ = 0; // not supported
         }
 
         // Exchange original event for the modified one in arguments list.
