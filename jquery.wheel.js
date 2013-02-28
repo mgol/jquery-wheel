@@ -56,4 +56,11 @@
             this.removeEventListener(nativeEvent, handler, false);
         }
     };
+
+    // Implement `$object.wheel()` and `$object.wheel(handler)`.
+    $.fn.wheel = function (data, fn) {
+        return arguments.length > 0 ?
+            this.on('wheel', null, data, fn) :
+            this.trigger('wheel');
+    };
 })(jQuery);
