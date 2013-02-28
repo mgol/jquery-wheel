@@ -8,6 +8,10 @@
 (function ($) {
     'use strict';
 
+    if ($.fn.wheel) { // already polyfilled
+        return;
+    }
+
     // Modern browsers support 'wheel', others - 'mousewheel'.
     var nativeEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
 
