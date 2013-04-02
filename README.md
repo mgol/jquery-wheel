@@ -16,4 +16,14 @@ Example usage:
 		else { /* zooming in handling */ }
 	});
 
+Works with jQuery 1.7.0-2.0.x.
 
+
+Browser support
+---------------
+
+The following browsers are supported:
+* Firefox, Chrome, Safari, Opera - current and previous version
+* IE 9 and newer
+
+The plugin should work in most older non-IE browsers, too, but it's not tested against those versions.
