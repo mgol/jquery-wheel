@@ -1,8 +1,8 @@
 /**
- * Author: Michał Gołębiowski <michal.golebiowski@laboratorium.ee>
- * Author: Brandon Aaron (http://brandonaaron.net)
- * Copyright (c) 2011 Brandon Aaron (http://brandonaaron.net)
- * Copyright (c) 2013 Laboratorium EE (http://laboratorium.ee)
+ * Author & Copyright: Michał Gołębiowski <m.goleb@gmail.com>
+ * License: MIT
+ *
+ * Thanks to Brandon Aaron (http://brandonaaron.net) for the idea of this plugin.
  */
 
 (function ($) {
