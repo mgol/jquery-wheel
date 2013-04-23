@@ -31,7 +31,8 @@
     function handler(orgEvent) {
         /* jshint validthis: true */ // event handler
 
-        var event = $.event.fix(orgEvent);
+        var args = [].slice.call(arguments, 0),
+            event = $.event.fix(orgEvent);
 
         if (nativeEvent === 'wheel') {
             event.deltaMode = orgEvent.deltaMode;
@@ -47,7 +48,6 @@
         }
 
         // Exchange original event for the modified one in arguments list.
-        var args = [].slice.call(arguments, 0);
         args[0] = event;
 
         return $.event.dispatch.apply(this, args);
