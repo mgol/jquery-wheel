@@ -13,11 +13,12 @@
     }
 
     // Modern browsers support `wheel`, WebKit & Opera - `mousewheel`.
-    var nativeEvent = ('onwheel' in document.createElement('div') ||
+    var nativeEvent =
         // IE>=9 supports `wheel` via `addEventListener` but exposes no `onwheel` attribute on DOM elements
         // making feature detection impossible :(
-        navigator.appName === 'Microsoft Internet Explorer' && document.documentMode > 8) ?
-        'wheel' : 'mousewheel';
+        ('onwheel' in document.createElement('div') || document.documentMode > 8) ?
+            'wheel' :
+            'mousewheel';
 
     // Normalizing event properties for the 'wheel' event (like event.which etc.).
     if (nativeEvent === 'wheel') {
