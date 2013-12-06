@@ -55,7 +55,7 @@
         return $.event.dispatch.apply(this, args);
     }
 
-    // Implementing 'wheel' using non-standard 'mousewheel' event.
+    // Implementing jQuery `wheel` event via native `wheel` or `mousewheel` event.
     $.event.special.wheel = {
         setup: function () {
             this.addEventListener(nativeEvent, handler, false);
