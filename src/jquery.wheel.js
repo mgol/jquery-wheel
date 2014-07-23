@@ -1,4 +1,7 @@
 /**
+ * jquery.wheel plugin
+ * jQuery plugin creating a wheel event based on DOM3 wheel event
+ *
  * Author & Copyright: Michał Gołębiowski <m.goleb@gmail.com>
  * License: MIT
  * Repository: https://github.com/mzgol/jquery-wheel
@@ -17,7 +20,7 @@
     var nativeEvent =
         // IE>=9 supports `wheel` via `addEventListener` but exposes no `onwheel` attribute on DOM elements
         // making feature detection impossible :(
-        ('onwheel' in document.createElement('div') || document.documentMode > 8) ?
+        'onwheel' in document.createElement('div') || document.documentMode > 8 ?
             'wheel' :
             'mousewheel';
 
@@ -63,7 +66,7 @@
 
         teardown: function () {
             this.removeEventListener(nativeEvent, handler, false);
-        }
+        },
     };
 
     // Implement `$object.wheel()` and `$object.wheel(handler)`.
