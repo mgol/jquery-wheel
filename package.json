@@ -20,11 +20,7 @@
     "url": "https://github.com/mzgol/jquery-wheel.git"
   },
   "bugs": "https://github.com/mzgol/jquery-wheel/issues",
-  "licenses": [
-    {
-      "type": "MIT"
-    }
-  ],
+  "license": "MIT",
   "files": [
     "dist/jquery.wheel.js",
     "dist/jquery.wheel.min.js",
