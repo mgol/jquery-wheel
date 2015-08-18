@@ -16,56 +16,41 @@
         return;
     }
 
-    // Modern browsers support `wheel`, WebKit & Opera - `mousewheel`.
-    var nativeEvent =
-        // IE>=9 supports `wheel` via `addEventListener` but exposes no `onwheel` attribute on DOM elements
-        // making feature detection impossible :(
-        'onwheel' in document.createElement('div') || document.documentMode > 8 ?
-            'wheel' :
-            'mousewheel';
-
     // Normalizing event properties for the 'wheel' event (like event.which etc.).
-    if (nativeEvent === 'wheel') {
-        $.event.fixHooks.wheel = $.event.mouseHooks;
-    } else {
-        // We can't attach hooks to 'wheel' only since we need a type matching to originalEvent.type
-        // and this field is non-mutable.
-        $.event.fixHooks.mousewheel = $.event.mouseHooks;
-    }
+    $.event.fixHooks.wheel = $.event.mouseHooks;
 
     function handler(orgEvent) {
-        /* jshint validthis: true */ // event handler
+        /* eslint-disable no-invalid-this */ // event handler
 
-        var args = [].slice.call(arguments, 0),
+        var i,
+            args = Array(arguments.length),
             event = $.event.fix(orgEvent);
 
-        if (nativeEvent === 'wheel') {
-            event.deltaMode = orgEvent.deltaMode;
-            event.deltaX = orgEvent.deltaX;
-            event.deltaY = orgEvent.deltaY;
-            event.deltaZ = orgEvent.deltaZ;
-        } else {
-            event.type = 'wheel';
-            event.deltaMode = 0; // deltaMode === 0 => scrolling in pixels (in Chrome default wheelDeltaY is 120)
-            event.deltaX = -1 * orgEvent.wheelDeltaX;
-            event.deltaY = -1 * orgEvent.wheelDeltaY;
-            event.deltaZ = 0; // not supported
+        for (i = 0; i < args.length; i++) {
+            args[i] = arguments[i];
         }
+
+        event.deltaMode = orgEvent.deltaMode;
+        event.deltaX = orgEvent.deltaX;
+        event.deltaY = orgEvent.deltaY;
+        event.deltaZ = orgEvent.deltaZ;
 
         // Exchange original event for the modified one in arguments list.
         args[0] = event;
 
         return $.event.dispatch.apply(this, args);
+
+        /* eslint-enable no-invalid-this */
     }
 
-    // Implementing jQuery `wheel` event via native `wheel` or `mousewheel` event.
+    // Implementing jQuery `wheel` event via native `wheel` event.
     $.event.special.wheel = {
         setup: function () {
-            this.addEventListener(nativeEvent, handler, false);
+            this.addEventListener('wheel', handler, false);
         },
 
         teardown: function () {
-            this.removeEventListener(nativeEvent, handler, false);
+            this.removeEventListener('wheel', handler, false);
         },
     };
 

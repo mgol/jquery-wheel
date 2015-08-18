@@ -1,6 +1,6 @@
 {
   "name": "jquery-wheel",
-  "version": "0.1.2-pre",
+  "version": "0.2.0-pre",
   "description": "jQuery plugin creating a wheel event based on DOM3 wheel event",
   "homepage": "https://github.com/mzgol/jquery-wheel",
   "author": {
@@ -30,19 +30,15 @@
   "devDependencies": {
     "grunt": "0.4.5",
     "grunt-cli": "0.1.13",
-    "grunt-contrib-copy": "0.7.0",
-    "grunt-contrib-uglify": "0.7.0",
-    "grunt-eslint": "5.1.0",
-    "grunt-jscs": "0.8.1",
-    "jscs-trailing-comma": "0.3.0",
-    "load-grunt-tasks": "3.1.0",
-    "time-grunt": "1.0.0"
+    "grunt-contrib-copy": "0.8.0",
+    "grunt-contrib-uglify": "0.9.1",
+    "grunt-eslint": "17.1.0",
+    "grunt-jscs": "2.1.0",
+    "load-grunt-tasks": "3.2.0",
+    "time-grunt": "1.2.1"
   },
   "scripts": {
     "prepublish": "grunt build",
     "test": "grunt test"
-  },
-  "engines": {
-    "node": ">=0.10.21"
   }
 }
