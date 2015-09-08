@@ -19,9 +19,7 @@
     // Normalizing event properties for the 'wheel' event (like event.which etc.).
     $.event.fixHooks.wheel = $.event.mouseHooks;
 
-    function handler(orgEvent) {
-        /* eslint-disable no-invalid-this */ // event handler
-
+    var handler = function (orgEvent) {
         var i,
             args = Array(arguments.length),
             event = $.event.fix(orgEvent);
@@ -39,9 +37,7 @@
         args[0] = event;
 
         return $.event.dispatch.apply(this, args);
-
-        /* eslint-enable no-invalid-this */
-    }
+    };
 
     // Implementing jQuery `wheel` event via native `wheel` event.
     $.event.special.wheel = {
