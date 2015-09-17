@@ -20,9 +20,9 @@
     $.event.fixHooks.wheel = $.event.mouseHooks;
 
     var handler = function (orgEvent) {
-        var i,
-            args = Array(arguments.length),
-            event = $.event.fix(orgEvent);
+        var i;
+        var args = Array(arguments.length);
+        var event = $.event.fix(orgEvent);
 
         for (i = 0; i < args.length; i++) {
             args[i] = arguments[i];
