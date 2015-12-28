@@ -2,7 +2,7 @@
   "name": "jquery-wheel",
   "version": "0.2.0-pre",
   "description": "jQuery plugin creating a wheel event based on DOM3 wheel event",
-  "homepage": "https://github.com/mzgol/jquery-wheel",
+  "homepage": "https://github.com/mgol/jquery-wheel",
   "author": {
     "name": "Michał Gołębiowski",
     "email": "m.goleb@gmail.com"
@@ -17,9 +17,9 @@
   "main": "dist/jquery.wheel.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mzgol/jquery-wheel.git"
+    "url": "https://github.com/mgol/jquery-wheel.git"
   },
-  "bugs": "https://github.com/mzgol/jquery-wheel/issues",
+  "bugs": "https://github.com/mgol/jquery-wheel/issues",
   "license": "MIT",
   "files": [
     "dist/jquery.wheel.js",

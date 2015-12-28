@@ -1,7 +1,7 @@
 /**
  * Author & Copyright: Michał Gołębiowski <m.goleb@gmail.com>
  * License: MIT
- * Repository: https://github.com/mzgol/jquery-wheel
+ * Repository: https://github.com/mgol/jquery-wheel
  *
  * Thanks to Brandon Aaron (http://brandonaaron.net) for the idea of this plugin.
  */
