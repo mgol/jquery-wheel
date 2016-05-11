@@ -2,8 +2,8 @@ wheel
 =====
 
 [![Travis build](https://img.shields.io/travis/mgol/jquery-wheel.svg?style=flat-square)](https://travis-ci.org/mgol/jquery-wheel)
-[![version](https://img.shields.io/npm/v/jquery-wheel.svg?style=flat-square)](http://npm.im/jquery-wheel)
-[![downloads](https://img.shields.io/npm/dm/jquery-wheel.svg?style=flat-square)](http://npm-stat.com/charts.html?package=jquery-wheel)
+[![Version](https://img.shields.io/npm/v/jquery-wheel.svg?style=flat-square)](http://npm.im/jquery-wheel)
+[![Downloads](https://img.shields.io/npm/dm/jquery-wheel.svg?style=flat-square)](http://npm-stat.com/charts.html?package=jquery-wheel)
 [![MIT License](https://img.shields.io/npm/l/jquery-wheel.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 
 jQuery plugin creating a wheel event based on DOM3 wheel event: http://www.w3.org/TR/DOM-Level-3-Events/#event-type-wheel. When available, it uses native wheel event; otherwise fallbacks to mousewheel event.
