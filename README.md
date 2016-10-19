@@ -6,7 +6,7 @@ wheel
 [![Downloads](https://img.shields.io/npm/dm/jquery-wheel.svg?style=flat-square)](http://npm-stat.com/charts.html?package=jquery-wheel)
 [![MIT License](https://img.shields.io/npm/l/jquery-wheel.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 
-jQuery plugin creating a wheel event based on DOM3 wheel event: http://www.w3.org/TR/DOM-Level-3-Events/#event-type-wheel. When available, it uses native wheel event; otherwise fallbacks to mousewheel event.
+jQuery plugin creating a wheel event based on DOM3 wheel event: http://www.w3.org/TR/DOM-Level-3-Events/#event-type-wheel. It uses native wheel event under the hood.
 
 ## USAGE
 
@@ -16,7 +16,7 @@ To provide consistency with the rest of jQuery mouse events, this plugin defines
 
 Example usage:
 
-	$(element).wheel(function (evt) {
+	$(element).on('wheel', function (evt) {
 		if (evt.deltaY > 0) { /* zooming out */ }
 		else { /* zooming in */ }
 	});
