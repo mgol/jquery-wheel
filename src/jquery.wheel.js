@@ -17,7 +17,10 @@
     }
 
     // Normalizing event properties for the 'wheel' event (like event.which etc.).
-    $.event.fixHooks.wheel = $.event.mouseHooks;
+    // This is only needed for jQuery <3.0.
+    if ($.event.fixHooks) {
+        $.event.fixHooks.wheel = $.event.mouseHooks;
+    }
 
     var handler = function (orgEvent) {
         var i;
