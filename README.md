@@ -21,7 +21,7 @@ Example usage:
 		else { /* zooming in */ }
 	});
 
-Works with jQuery 1.7.0+ (including 2.0 and newer).
+Works with jQuery 1.7.0+.
 
 
 Browser support
