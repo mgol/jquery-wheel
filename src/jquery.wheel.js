@@ -45,11 +45,11 @@
     // Implementing jQuery `wheel` event via native `wheel` event.
     $.event.special.wheel = {
         setup: function () {
-            this.addEventListener('wheel', handler, false);
+            this.addEventListener('wheel', handler);
         },
 
         teardown: function () {
-            this.removeEventListener('wheel', handler, false);
+            this.removeEventListener('wheel', handler);
         },
     };
 
