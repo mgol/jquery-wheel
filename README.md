@@ -8,6 +8,8 @@ wheel
 
 jQuery plugin creating a wheel event based on DOM3 wheel event: http://www.w3.org/TR/DOM-Level-3-Events/#event-type-wheel. It uses native wheel event under the hood.
 
+NOTE: This plugin only provides basic functionality of the native `wheel` event and proxies its relevant properties (like `deltaY`) to the main jQuery event object. For more advanced functionality (like always converting the value to pixels, supporting older browsers etc.) use the [jquery-mousewheel](https://www.npmjs.com/package/jquery-mousewheel) plugin.
+
 ## USAGE
 
 To provide consistency with the rest of jQuery mouse events, this plugin defines the following fields on the jQuery wheel event:
