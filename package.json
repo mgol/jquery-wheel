@@ -28,7 +28,7 @@
     "LICENSE.txt"
   ],
   "devDependencies": {
-    "eslint-config-mgol": "0.0.32",
+    "eslint-config-mgol": "0.0.34",
     "grunt": "1.0.1",
     "grunt-cli": "1.2.0",
     "grunt-contrib-copy": "1.0.0",
