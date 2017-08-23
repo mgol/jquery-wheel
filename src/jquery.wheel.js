@@ -2,7 +2,7 @@
  * jquery.wheel plugin
  * jQuery plugin creating a wheel event based on DOM3 wheel event
  *
- * Author & Copyright: Michał Gołębiowski <m.goleb@gmail.com>
+ * Author & Copyright: Michał Gołębiowski-Owczarek <m.goleb@gmail.com>
  * License: MIT
  * Repository: https://github.com/mzgol/jquery-wheel
  *
