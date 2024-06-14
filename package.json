@@ -1,5 +1,6 @@
 {
   "name": "jquery-wheel",
+  "type": "commonjs",
   "version": "0.2.4-pre",
   "description": "jQuery plugin creating a wheel event based on DOM3 wheel event",
   "homepage": "https://github.com/mgol/jquery-wheel",
@@ -10,6 +11,7 @@
   "keywords": [
     "jquery",
     "plugin",
+    "ecosystem:jquery",
     "jquery-plugin",
     "browser",
     "browseronly"
@@ -28,12 +30,12 @@
     "LICENSE.txt"
   ],
   "devDependencies": {
-    "eslint-config-mgol": "0.0.47",
-    "grunt": "1.5.3",
-    "grunt-cli": "1.3.2",
+    "eslint-config-mgol": "0.0.49",
+    "globals": "15.4.0",
+    "grunt": "1.6.1",
     "grunt-contrib-copy": "1.0.0",
-    "grunt-contrib-uglify": "5.0.0",
-    "grunt-eslint": "23.0.0",
+    "grunt-contrib-uglify": "5.2.2",
+    "grunt-eslint": "25.0.0",
     "load-grunt-tasks": "5.1.0",
     "time-grunt": "2.0.0"
   },
